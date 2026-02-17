@@ -1,0 +1,54 @@
+<iDOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Problem 6</title>
+    </head>
+    <body>
+        <style>
+            #stateappear{border: solid 2px; padding: 80px; width: 300px}
+        </style>
+        <h1>Problem 6</h1>
+        <select size = 10 id = "selector">States:</select>
+        <button type = "button" id = "add">Add State</button>
+        <div id = "stateappear"></div>
+        <button type= "button" id="clear">Clear States</button>
+        <script>
+            var stateList=[
+                "New York",
+                "Massachusetts",
+                "Maine",
+                "New Hampshire",
+                "Pensylvania",
+                "Rhode Island",
+                "Connecticut",
+                "Maryland",
+                "Virginia",
+                "North Carolina"
+            ]
+            var selectorbody=""
+            function addtoform(stateName, index){
+                if (index === 0){
+                    selectorbody += "<option selected>" + stateName + "</option>";
+                }else {
+                    selectorbody += "<option>" + stateName + "</option>";
+                }
+            }
+
+            stateList.forEach(addtoform)
+            document.getElementById("selector").innerHTML=selectorbody; 
+            var divbody=""; 
+            var all_states_in_div = ""; 
+            function addtodiv(){
+                var selectedState = document.getElementById("selector").value;
+                all_states_in_div += selectedState + "</br>"
+                document.getElementById("stateappear").innerHTML = all_states_in_div; 
+            }
+            function emptydiv(){
+                document.getElementById("stateappear").innerHTML = ""; 
+                all_states_in_div="";
+            }
+            document.getElementById("add").addEventListener("click", addtodiv);
+            document.getElementById("clear").addEventListener("click", emptydiv)
+        </script>
+    </body>
+</html>
