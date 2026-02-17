@@ -1,0 +1,22 @@
+<iDOCTYPE html>
+    <html lang="en">
+    <head>
+    <title>Problem</title>
+    </head>
+    <body>
+        <h1>Probelm 3</h1>
+        <div id = "answer"></div>
+        <script>
+            var stringNames = prompt("Give me a few names seperated by commas");
+            var arrayNames = stringNames.split(",");
+            var listBody = " "; 
+            function listItem (name){
+                listBody += "<li>" + name +  "</li>"; 
+            }
+            arrayNames.forEach(listItem); 
+            wholeList = "<ol>" + listBody + "</ol>"; 
+            document.getElementById("answer").innerHTML= "<p>You have entered the following names: </p><br>" + wholeList; 
+        </script>
+    </body>
+</html>
+
